@@ -8,13 +8,12 @@ const CarrinhoDeCompras = () => {
 
     const [cursos] = useCursos();
     const [total, setTotal] = useState(0);
-
+   
     useEffect(() => {
-        cursos.map((curso) => {
-            setTotal(total + curso.preco)
-        });
+        setTotal(cursos.reduce((acc, {preco}) => acc + preco, 0));
     }, [total]);
 
+   
     return (
         <>
             <Cabecalho />
