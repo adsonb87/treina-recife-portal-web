@@ -26,7 +26,7 @@ const Curso = () => {
                         className="form-control mb-3 mt-3"
                         placeholder="Filtrar curso pelo id..."
                         min={0}
-                        max={6}
+                        max={9}
                         onChange={(event) => setBusca(event.target.value)}
                     />
 
@@ -37,6 +37,7 @@ const Curso = () => {
                                     titulo={c.nome}
                                     cargaHoraria={c.cargaHoraria}
                                     preco={c.preco}
+                                    linkImg={c.imagem}
                                     key={i}/>
                             );
                         })

@@ -40,6 +40,7 @@ function Home() {
                                         titulo={curso.nome} 
                                         cargaHoraria={curso.cargaHoraria} 
                                         preco={curso.preco}
+                                        linkImg={curso.imagem}
                                         key={indice}
                                     />
                                 );
