@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import Cabecalho from "../../components/Cabecalho";
 import Footer from "../../components/Footer";
 import { useCursos } from "../../hooks/useCursos";
-import Card from "../../components/Card";
+
 import { LISTA_CURSOS } from "../../mocks/cursos";
+import CardDetail from "../../components/CardDetail";
 
 const Curso = () => {
     
@@ -20,29 +21,33 @@ const Curso = () => {
     return (
         <>
             <Cabecalho />
-                <div className="col-md-5 container">
-                    <input 
-                        type="number"
-                        className="form-control mb-3 mt-3"
-                        placeholder="Filtrar curso pelo id..."
-                        min={0}
-                        max={9}
-                        onChange={(event) => setBusca(event.target.value)}
-                    />
-
+            <div className="col-md-5 container">
+                <input 
+                    type="number"
+                    className="form-control mb-3 mt-3"
+                    placeholder="Filtrar curso pelo id..."
+                    min={0}
+                    max={9}
+                    onChange={(event) => setBusca(event.target.value)}
+                />
                     {
                         curso.map((c, i) => {
                             return(
-                                <Card 
+                                <CardDetail 
+                                    key={i}
+                                    linkImg={c.imagem}
                                     titulo={c.nome}
+                                    descricao={c.descricao}
                                     cargaHoraria={c.cargaHoraria}
                                     preco={c.preco}
-                                    linkImg={c.imagem}
-                                    key={i}/>
+                                    nivel={c.nivel}
+                                    professor={c.professor}
+                                    ementa={c.ementa}
+                                />
                             );
                         })
                     }
-                </div>
+            </div>
             <Footer />
         </>
     );

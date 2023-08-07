@@ -1,11 +1,20 @@
 import "./App.css";
-import Curso from "../src/pages/Curso";
-import Home from "../src/pages/Home";
-import CarrinhoDeCompras from "../src/pages/CarrinhoDeCompras";
+import Login from "./pages/Login";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Curso from "./pages/Curso";
+import CarrinhoDeCompras from "./pages/CarrinhoDeCompras";
 
 function App() {
   return (
-    <CarrinhoDeCompras />
+    <BrowserRouter>
+      <Routes>
+        <Route index path="/" element={<Login />} />
+        <Route path="/cursos" element={<Home />} />
+        <Route path="/cursos/:id" element={<Curso />} />
+        <Route path="/carrinho" element={<CarrinhoDeCompras />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
