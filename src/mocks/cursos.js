@@ -1,194 +1,168 @@
 export const LISTA_CURSOS = [
     {
-        id: 1,
-        nome: "Lógica de Programação com Python",
-        descricao: "Curso voltado para iniciantes em programação",
-        nivel: "Iniciante",
-        preco: 380,
-        cargaHoraria: 30,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/01/Logica-de-Programacao-com-Python-sem-data.png",
-        ementa:[
-            "Conceitos Iniciais",
-            "Configuração de Ambiente",
-            "Introdução ao Python"
-        ],
-        professor: {
-            id: 1,
-            nome: "Rogério Aguiar",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
-
+      id: 1,
+      nome: "Lógica de Programação com Python",
+      descricao:
+        "Curso de lógica de programação voltado para iniciantes em programação.",
+      nivel: "Iniciante",
+      imagem: "https://treinarecife.com.br/wp-content/uploads/2023/01/Logica-de-Programacao-com-Python-sem-data.png",
+      preco: 380,
+      ementa: [
+        "Conceitos Iniciais",
+        "Instalação e Configuração de Ambiente",
+        "Tipos de Dados",
+        "Palavras Reservadas",
+        "Variáveis",
+        "Operadores Numéricos, Relacionais, Lógicos e de Concatenação",
+        "Comentários em Programas",
+        "Estruturas Condicionais (Simples e Composta)",
+        "Tabela Verdade",
+        "Estruturas de Repetição",
+        "Tratamento de Exceções",
+        "Manipulação de Textos",
+        "Exercícios",
+      ],
+      professor: {
+        nome: "Rogério Aguiar",
+        resumo:
+          "Consultor em Gestão da Organizacional e da Tecnologia da Informação e Comunicação, com mais de 30 anos de experiência, mestre em Administração Pública, Especialista em Planejamento Estratégico e na Gestão da TIC, Professor Universitário de Cursos de Graduação ministrando a disciplina lógica de programação e Pós-Graduação em diversas Faculdade e Universidades em Pernambuco.",
+        linkedin: "",
+        imagem: "",
+      },
     },
     {
-        id: 2,
-        nome: "Java Web Spring Boot",
-        descricao: "Curso voltado para iniciantes em programação",
-        nivel: "Iniciante",
-        preco: 380,
-        cargaHoraria: 48,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/01/rota-foguete-backend-768x768.png",
-        ementa:[
-            "Conceitos Iniciais",
-            "Configuração de Ambiente",
-            "Introdução ao Java",
-            "Introdução ao Spring Boot"
-        ],
-        professor: {
-            id: 2,
-            nome: "Alexandre Jr",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
+      id: 2,
+      nome: "Java Web com Spring Boot",
+      descricao:
+        "Curso de Java para desenvolvimento de sistemas web com Spring Boot.",
+      nivel: "Intermediário",
+      imagem: "https://treinarecife.com.br/wp-content/uploads/2023/01/rota-foguete-backend-768x768.png",
+      preco: 750,
+      ementa: [
+        "Conceitos Iniciais",
+        "Instalação e Configuração de Ambiente",
+        "Introdução à Linguagem Java",
+        "Orientação a Objetos",
+        "Introdução a HTML5, CSS, Bootstrap e JavaScript",
+        "Introdução a banco de dados MySQL",
+        "Padrão de Projeto: Spring MVC",
+        "Introdução ao Spring Boot",
+        "CRUD com REST APIs",
+        "Exercícios",
+      ],
+      professor: {
+        nome: "Alexandre de Souza Jr.",
+        resumo:
+          "Professor e Consultor na Treina Recife, Engenheiro de Software na Liferay Latam, professor de graduação na área de Qualidade, Testes de Software, Gestão Ágil de Projetos e Java Web. Bacharel em Engenharia Civil com mestrado em Simulação de Reservatórios de Petróleo pela UFPE.",
+        linkedin: "",
+        imagem: "",
+      },
     },
     {
-        id: 3,
-        nome: "Java Experience",
-        descricao: "Curso voltado para simulação de ambiente de programação",
-        nivel: "Intermediário",
-        preco: 390,
-        cargaHoraria: 30,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/01/rota-foguete-backend-768x768.png",
-        ementa:[
-            "Conceitos Iniciais de metódologia ágil",
-            "Introdução ao GitHub"
-        ],
-        professor: {
-            id: 2,
-            nome: "Alexandre",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
+      id: 3,
+      nome: "Controle de Versões com Git e GitHub",
+      descricao: "Curso prático de versionamento de aplicações com Git e GitHub.",
+      imagem: "https://treinarecife.com.br/wp-content/uploads/2023/01/rota-foguete-backend-768x768.png",
+      nivel: "Avançado",
+      preco: 450,
+      ementa: [
+        "Conceitos Iniciais",
+        "Instalação e Configuração de Ambiente",
+        "Introdução ao Controle de Versão com Git",
+        "Fundamentos do Git",
+        "Trabalhando com Repositórios Locais e Remotos",
+        "Branches e Fluxo de Trabalho",
+        "Resolvendo Conflitos em Merge",
+        "Revertendo Alterações",
+        "GitHub: Introdução e Criação de Conta",
+        "Colaboração no GitHub: Fork, Pull Request e Code Review",
+        "Gerenciamento de Issues e Projetos no GitHub",
+        "GitHub Pages: Hospedando seu Site",
+        "Boas Práticas com Git e GitHub",
+      ],
+      professor: {
+        nome: "Alexandre de Souza Jr.",
+        resumo:
+          "Professor e Consultor na Treina Recife, Engenheiro de Software na Liferay Latam, professor de graduação na área de Qualidade, Testes de Software, Gestão Ágil de Projetos e Java Web. Bacharel em Engenharia Civil com mestrado em Simulação de Reservatórios de Petróleo pela UFPE.",
+        linkedin: "",
+        imagem: "",
+      },
     },
     {
-        id: 4,
-        nome: "Frontend",
-        descricao: "Curso voltado para iniciantes em programação",
-        nivel: "Iniciante",
-        preco: 380,
-        cargaHoraria: 30,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/03/jornada-frontend-768x768.png",
-        ementa:[
-            "Conceitos Iniciais",
-            "Configuração de Ambiente",
-            "Introdução ao HTML, CSS e JS"
-        ],
-        professor: {
-            id: 1,
-            nome: "Rogério",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
-
+      id: 4,
+      nome: "Curso de Frontend",
+      descricao: "Curso de HTML, CSS, Bootstrap e JavaScript na prática.",
+      imagem: "https://treinarecife.com.br/wp-content/uploads/2023/03/jornada-frontend-768x768.png",
+      nivel: "Intermediário",
+      preco: 450,
+      ementa: [
+        "Conceitos Iniciais",
+        "Instalação e Configuração de Ambiente",
+        "Aplicações Web: Conceitos de arquitetura de uma aplicação web, protocolos de comunicação e servidores web",
+        "HTML5: Elementos, atributos, formulários, componentes de entrada de dados, tabelas, imagens e links",
+        "CSS: Introdução, sintaxe, seletores, comentários e design",
+        "Bootstrap: Introdução, container, grid, cores, tabelas, imagens, alertas, spinners, cards, inputs, buttons e icons",
+        "Linguagem JavaScript: Conceitos, sintaxe, operadores, funções, estruturas de decisão, estruturas de repetição, objetos, arrays, validação de formulários, construção do frontend de uma aplicação web",
+      ],
+      professor: {
+        nome: "Hidelberto Melo",
+        resumo:
+          "Bacharel em Sistemas de Informação pela Faculdade Integrada do Recife (2007), Pós-graduação em Docência do Ensino Superior pela Uninassau (2009), Mestrado em Ciência da Computação pela UFPE/CIN (2010). Atualmente é professor da UNINASSAU. Tem experiência na área de Ciência da Computação, com ênfase em Sistemas de informação, atuando principalmente nos seguintes temas: Orientação a Objetos, Desenvolvimento Java, .NET, PHP, Banco de Dados e Sistemas Distribuídos.",
+        linkedin: "",
+        imagem: "",
+      },
     },
     {
-        id: 5,
-        nome: "React JS",
-        descricao: "Curso voltado para iniciantes em programação",
-        nivel: "Iniciante",
-        preco: 390,
-        cargaHoraria: 30,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/03/jornada-frontend-768x768.png",
-        ementa:[
-            "Conceitos Iniciais",
-            "Configuração de Ambiente",
-            "Introdução ao JS"
-        ],
-        professor: {
-            id: 2,
-            nome: "Alexandre",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
-
+      id: 5,
+      nome: "React JS",
+      descricao:
+        "Curso de desenvolvimento de aplicações web com o framework React JS.",
+      nivel: "Avançado",
+      imagem: "https://treinarecife.com.br/wp-content/uploads/2023/03/jornada-frontend-768x768.png",
+      preco: 450,
+      ementa: [
+        "Conceitos Iniciais",
+        "Instalação e Configuração de Ambiente",
+        "JavaScript Básico",
+        "Introdução ao React JS: criação do projeto e componentes customizados",
+        "Hooks: estados e ciclos de vida",
+        "Navegação entre páginas com React Router Dom",
+        "Integração com API Externas com Axios",
+      ],
+      professor: {
+        nome: "Alexandre de Souza Jr.",
+        resumo:
+          "Professor e Consultor na Treina Recife, Engenheiro de Software na Liferay Latam, professor de graduação na área de Qualidade, Testes de Software, Gestão Ágil de Projetos e Java Web. Bacharel em Engenharia Civil com mestrado em Simulação de Reservatórios de Petróleo pela UFPE.",
+        linkedin: "",
+        imagem: "",
+      },
     },
     {
-        id: 6,
-        nome: "React Experience",
-        descricao: "Curso voltado para simulação de ambiente de programação",
-        nivel: "Intermediário",
-        preco: 380,
-        cargaHoraria: 30,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/03/jornada-frontend-768x768.png",
-        ementa:[
-            "Conceitos Iniciais de metódologia ágil",
-            "Introdução ao GitHub"
-        ],
-        professor: {
-            id: 2,
-            nome: "Alexandre",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
-
+      id: 6,
+      nome: "Análise de Dados com Python",
+      descricao:
+        "Curso de análise de dados com linguagem Pythone e biblioteca Pandas.",
+      nivel: "Intermediário",
+      imagem: "https://treinarecife.com.br/wp-content/uploads/2023/07/jornada-dados-768x768.png",
+      preco: 450,
+      ementa: [
+        "Conceitos Iniciais",
+        "Instalação e Configuração de Ambiente",
+        "Linguagem Python",
+        "Orientação a Objetos",
+        "Funções, Procedimentos e Pacotes",
+        "Tratamento de Arquivos",
+        "Manipulação de Banco de Dados",
+        "Introdução ao Aprendizado de Máquina",
+        "Introdução ao Deep Learning",
+        "Exercícios",
+      ],
+      professor: {
+        nome: "Luiz Fernando Calábria",
+        resumo:
+          "Bacharel em Sistemas de Informação, MBA em Inteligência de Negócios – Business Intelligence e MBA em Tecnologia para Negócios: AI, Data Science e Big Data e Mestrando em Informática Aplicada.",
+        linkedin: "",
+        imagem: "",
+      },
     },
-    {
-        id: 7,
-        nome: "Tratamento de dados com Python",
-        descricao: "Curso voltado para simulação de ambiente de programação",
-        nivel: "Iniciante",
-        preco: 380,
-        cargaHoraria: 18,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/07/jornada-dados-768x768.png",
-        ementa:[
-            "Conceitos Iniciais de metódologia ágil",
-            "Introdução ao GitHub"
-        ],
-        professor: {
-            id: 1,
-            nome: "Rogério",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
-
-    },
-    {
-        id: 8,
-        nome: "Transformando dados com Pentaho Data Integration",
-        descricao: "Curso voltado para simulação de ambiente de programação",
-        nivel: "Intermediário",
-        preco: 380,
-        cargaHoraria: 21,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/07/jornada-dados-768x768.png",
-        ementa:[
-            "Conceitos Iniciais de metódologia ágil",
-            "Introdução ao GitHub"
-        ],
-        professor: {
-            id: 3,
-            nome: "Luiz",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
-
-    },
-    {
-        id: 9,
-        nome: "Análise de dados com Python",
-        descricao: "Curso voltado para simulação de ambiente de programação",
-        nivel: "Intermediário",
-        preco: 380,
-        cargaHoraria: 30,
-        imagem: "https://treinarecife.com.br/wp-content/uploads/2023/07/jornada-dados-768x768.png",
-        ementa:[
-            "Conceitos Iniciais de metódologia ágil",
-            "Introdução ao GitHub"
-        ],
-        professor: {
-            id: 3,
-            nome: "Luiz",
-            resumo: "",
-            imagem: "",
-            linkedin: ""
-        }
-
-    }
-]
+  ];

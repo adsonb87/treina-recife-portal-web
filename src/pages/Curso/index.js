@@ -2,9 +2,13 @@ import Cabecalho from "../../components/Cabecalho";
 import Footer from "../../components/Footer";
 import { useState } from "react";
 import { LISTA_CURSOS } from "../../mocks/cursos";
+import { useParams } from "react-router-dom";
 
 function Curso() {
-  const [curso] = useState(LISTA_CURSOS[0]);
+
+  const { id } = useParams();
+
+  const [curso] = useState(LISTA_CURSOS[id - 1]);
 
   return (
     <>

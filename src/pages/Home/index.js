@@ -10,6 +10,8 @@ function Home() {
     const [cursos, setCursos] = useCursos();
     const [busca, setBusca] = useState("");
 
+    const[carrinho, setCarrinho] = useState([]);
+
     useEffect(() => {
         const cursosFiltrados = LISTA_CURSOS.filter((curso) => curso.nome.toLowerCase().includes(busca.toLowerCase()));
 
@@ -37,10 +39,9 @@ function Home() {
                             cursos.map((curso, indice) => {
                                 return (
                                     <Card 
-                                        titulo={curso.nome} 
-                                        cargaHoraria={curso.cargaHoraria} 
-                                        preco={curso.preco}
-                                        linkImg={curso.imagem}
+                                        curso={curso}
+                                        carrinho={carrinho}
+                                        setCarrinho={setCarrinho}
                                         key={indice}
                                     />
                                 );

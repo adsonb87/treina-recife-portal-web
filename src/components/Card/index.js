@@ -1,44 +1,50 @@
 import { useState } from "react";
-import logo from "../../assets/treina_recife_logo.png"
+import imagem from "../../assets/treina_recife_logo.png";
+import { useNavigate } from "react-router-dom";
 
-const Card = ({ titulo, cargaHoraria, preco, linkImg }) => {
-  const [desabilitado, setDesabilitado] = useState(false); 
+function Card({ curso, carrinho, setCarrinho }) {
+  const [desabilitado, setDesabilitado] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleComprar = () => {
+    setCarrinho([...carrinho, curso]);
+
+    setDesabilitado(true);
+  }
 
   return (
     <div className="col">
       <div className="card shadow-sm">
-        <img
-          src= {linkImg}
-          alt="" width="100%" height="280" 
-        />
-        {/*
-        <svg className="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
-          <title>Placeholder</title>
-          <rect width="100%" height="100%" fill="#55595c" />
-          <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail </text>
-        </svg>
-        */}
+        <img src={curso.imagem} alt="Curso" width="100%" height="225" />
+
         <div className="card-body">
-          <p className="card-text">{titulo}</p>
+          <p className="card-text fw-bold">{curso.nome}</p>
+          <p className="card-text">{curso.descricao}</p>
           <div className="d-flex justify-content-between align-items-center">
             <div className="btn-group">
-              <button type="button" className="btn btn-sm btn-outline-secondary"> Detalhes </button>
               <button
                 type="button"
-                className="btn btn-sm btn-outline-secondary"
-                onClick={() => setDesabilitado(true)}
-                disabled = {desabilitado}
+                className="btn btn-sm btn-primary border"
+                disabled={desabilitado}
+                onClick={() => handleComprar}
               >
                 Comprar
               </button>
+              <button
+                type="button"
+                className="btn btn-sm btn-outline-primary border"
+                onClick={() => navigate(`/cursos/${curso.id}`)}
+              >
+                Ver Detalhes
+              </button>
             </div>
-            <small className="text-body-secondary">{cargaHoraria} Hrs</small>
-            <small className="text-body-secondary">R$ {preco}</small>
+            <strong className="text-body-primary">R$ {curso.preco}</strong>
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Card;

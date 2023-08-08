@@ -1,4 +1,5 @@
-import logo from "../../assets/treina_recife_logo2.png"
+import logo from "../../assets/treina_recife_logo2.png";
+import { Link } from "react-router-dom"
 
 function Cabecalho(){
     return (
@@ -13,13 +14,9 @@ function Cabecalho(){
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="#">Cursos</a>
-                        </li>
-                        <li className="nav-item">
-                        <a className="nav-link" href="#">Professores</a>
+                            <Link className="nav-link active" aria-current="page" to="/carrinho">
+                                Ver Carrinho
+                            </Link>
                         </li>
                     </ul>
                     </div>
