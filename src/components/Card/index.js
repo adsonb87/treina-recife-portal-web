@@ -1,5 +1,4 @@
 import { useState } from "react";
-import imagem from "../../assets/treina_recife_logo.png";
 import { useNavigate } from "react-router-dom";
 
 function Card({ curso, carrinho, setCarrinho }) {
