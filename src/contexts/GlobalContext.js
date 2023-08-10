@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const GlobalContext = createContext();
 
@@ -10,14 +10,14 @@ export const GlobalProvider = ({ children }) => {
         setCarrinho([...carrinho, item]);
     }
 
-    const removerItem = (item) => {
-        carrinho.map((item,indice) => {
-            <></>
-        })
+    const removerItem = (indice) => {
+        const listItens = [...carrinho];
+        listItens.splice(indice, 1);
+        setCarrinho(listItens);
     }
 
     return(
-        <GlobalContext.Provider value={{ carrinho, setCarrinho, adicionarItem }}>
+        <GlobalContext.Provider value={{ carrinho, setCarrinho, adicionarItem, removerItem }}>
             {children}
         </GlobalContext.Provider>
     )

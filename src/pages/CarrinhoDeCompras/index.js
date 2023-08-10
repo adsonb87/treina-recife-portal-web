@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Cabecalho from "../../components/Cabecalho";
 import Footer from "../../components/Footer";
 import { GlobalContext } from "../../contexts/GlobalContext";
@@ -7,7 +7,7 @@ import { AiFillDelete } from "react-icons/ai";
 
 function CarrinhoDeCompras() {
 
-  const { carrinho } = useContext(GlobalContext);
+  const { carrinho, removerItem } = useContext(GlobalContext);
 
   const [total, desconto] = CalcularTotal(carrinho);
 
@@ -25,9 +25,11 @@ function CarrinhoDeCompras() {
             carrinho.map((item, indice) => (
               <li className="list-group-item d-flex justify-content-between lh-sm" key={indice}>
                 <div>
-                  <div className="d-flex">
+                  <div className="d-flex align-items-center">
                     <h6 className="my-0">{item.nome}</h6>
-                    <AiFillDelete className="ms-2" color="#001681" onClick={() => {}}/>
+                    <button className="btn ms-2" onClick={() => removerItem(indice)}> 
+                      <AiFillDelete color="#001681" />
+                    </button>              
                   </div>
                   <small className="text-body-secondary">Nível: {item.nivel}</small>
                 </div>
