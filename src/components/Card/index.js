@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
-function Card({ curso, carrinho, setCarrinho }) {
+function Card({ curso }) {
   const [desabilitado, setDesabilitado] = useState(false);
+
+  const { adicionarItem } = useContext(GlobalContext);
 
   const navigate = useNavigate();
 
   const handleComprar = () => {
-    setCarrinho([...carrinho, curso]);
-
+    adicionarItem(curso);
     setDesabilitado(true);
   }
 
@@ -26,7 +28,7 @@ function Card({ curso, carrinho, setCarrinho }) {
                 type="button"
                 className="btn btn-sm btn-primary border"
                 disabled={desabilitado}
-                onClick={() => handleComprar}
+                onClick={handleComprar}
               >
                 Comprar
               </button>

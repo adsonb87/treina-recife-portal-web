@@ -1,14 +1,21 @@
 import Cabecalho from "../../components/Cabecalho";
 import Footer from "../../components/Footer";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { LISTA_CURSOS } from "../../mocks/cursos";
 import { useParams } from "react-router-dom";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 function Curso() {
 
   const { id } = useParams();
 
   const [curso] = useState(LISTA_CURSOS[id - 1]);
+
+  const { adicionarItem } = useContext(GlobalContext);
+
+  const handleComprar = () => {
+    adicionarItem(curso);
+  }
 
   return (
     <>
@@ -22,7 +29,11 @@ function Curso() {
             <b>Nível: </b>
             {curso.nivel} - <b>Investimento: </b>R$ {curso.preco}
           </p>
-          <button className="btn btn-primary btn-lg" type="button">
+          <button 
+            className="btn btn-primary btn-lg" 
+            type="button"
+            onClick={handleComprar}
+          >
             Comprar
           </button>
         </div>

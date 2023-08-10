@@ -1,7 +1,16 @@
+import { useContext } from "react";
 import Cabecalho from "../../components/Cabecalho";
 import Footer from "../../components/Footer";
+import { GlobalContext } from "../../contexts/GlobalContext";
+import { CalcularTotal } from "../utils/carrinho";
+import { AiFillDelete } from "react-icons/ai";
 
 function CarrinhoDeCompras() {
+
+  const { carrinho } = useContext(GlobalContext);
+
+  const [total, desconto] = CalcularTotal(carrinho);
+
   return (
     <>
       <Cabecalho />
@@ -9,43 +18,37 @@ function CarrinhoDeCompras() {
       <div className="container col-md-8 col-lg-6 p-5">
         <h4 className="d-flex justify-content-between align-items-center mb-3">
           <span className="text-body-primary">Carrinho de Compras</span>
-          <span className="badge bg-primary rounded-pill">3</span>
+          <span className="badge bg-primary rounded-pill">{carrinho.length}</span>
         </h4>
-
         <ul className="list-group mb-3">
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Lógica de Programação com Python</h6>
-              <small className="text-body-secondary">Nível: Iniciante</small>
-            </div>
-            <span className="text-body-secondary">R$ 380</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Java Web com Spring Boot</h6>
-              <small className="text-body-secondary">
-                Nível: Intermediário
-              </small>
-            </div>
-            <span className="text-body-secondary">R$ 750</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 className="my-0">Java Experience</h6>
-              <small className="text-body-secondary">Nível: Avançado</small>
-            </div>
-            <span className="text-body-secondary">R$ 450</span>
-          </li>
-          <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
-            <div className="text-success">
-              <h6 className="my-0">Código Promocional</h6>
-              <small>ABC-123-DEF-456-00</small>
-            </div>
-            <span className="text-success">R$ 100</span>
-          </li>
+          {
+            carrinho.map((item, indice) => (
+              <li className="list-group-item d-flex justify-content-between lh-sm" key={indice}>
+                <div>
+                  <div className="d-flex">
+                    <h6 className="my-0">{item.nome}</h6>
+                    <AiFillDelete className="ms-2" color="#001681" onClick={() => {}}/>
+                  </div>
+                  <small className="text-body-secondary">Nível: {item.nivel}</small>
+                </div>
+                <span className="text-body-secondary">R$ {item.preco}</span>
+              </li>
+            ))
+          }
+
+          {carrinho.length >= 3 && (
+            <li className="list-group-item d-flex justify-content-between bg-body-tertiary">
+              <div className="text-success">
+                <h6 className="my-0">Código Promocional</h6>
+                <small>ABC-123-DEF-456-00</small>
+              </div>
+              <span className="text-success">R$ {desconto}</span>
+            </li>
+          )}
+
           <li className="list-group-item d-flex justify-content-between">
             <strong>Total:</strong>
-            <strong>R$ 1.480</strong>
+            <strong>R$ {total}</strong>
           </li>
         </ul>
 
