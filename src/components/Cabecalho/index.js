@@ -14,6 +14,11 @@ function Cabecalho(){
                     <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to="/usuarios">
+                               Usuários
+                            </Link>
+                        </li>
+                        <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to="/carrinho">
                                 Ver Carrinho
                             </Link>
