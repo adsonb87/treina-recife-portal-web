@@ -1,3 +1,13 @@
 {
-  "usuarios": []
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Adson",
+      "sobrenome": "Souza",
+      "genero": "M",
+      "email": "adsonb87@gmail.com",
+      "senha": "1234",
+      "idade": 35
+    }
+  ]
 }
