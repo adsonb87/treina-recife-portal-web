@@ -4,10 +4,36 @@
       "id": 1,
       "nome": "Adson",
       "sobrenome": "Souza",
-      "genero": "M",
       "email": "adsonb87@gmail.com",
       "senha": "1234",
+      "genero": "M",
       "idade": 35
+    },
+    {
+      "id": 2,
+      "nome": "Edilson",
+      "sobrenome": "Carlos",
+      "email": "edilson@gmail.com",
+      "genero": "M",
+      "idade": 44
+    },
+    {
+      "id": 3,
+      "nome": "Alexandre",
+      "sobrenome": "Silva",
+      "email": "edilson@gmail.com",
+      "senha": "1234",
+      "genero": "M",
+      "idade": 44
+    },
+    {
+      "id": 5,
+      "nome": "Joana",
+      "sobrenome": "Karla",
+      "email": "jj@gmail.com",
+      "senha": "1234",
+      "genero": "F",
+      "idade": "35"
     }
   ]
 }

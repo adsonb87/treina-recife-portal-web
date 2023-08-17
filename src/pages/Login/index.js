@@ -1,6 +1,7 @@
 import logo from "../../assets/treina_recife_logo.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { login } from "../../services/api";
 
 function Login(){
     const[email, setEmail] = useState("");
@@ -16,9 +17,17 @@ function Login(){
             setErro("Campo Obrigatório!!");
   
             return;
-          }
+          } else {
 
-         navigate("/cursos");
+            login(
+            {
+                email,
+                senha
+            }, 
+            navigate);
+
+          }
+          
     }
 
     return (

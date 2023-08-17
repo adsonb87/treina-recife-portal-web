@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import Cabecalho from "../../components/Cabecalho";
 import Footer from "../../components/Footer";
 import { deletarUsuario, listarUsuarios } from "../../services/api";
+import { useNavigate } from "react-router-dom";
 
 
 
 function Usuarios() {
 
     const [usuarios, setUsuarios] = useState([]);
+    const navigate = useNavigate();
 
     async function handlerExcluir(id){
         await deletarUsuario(id);
@@ -32,6 +34,7 @@ function Usuarios() {
                                 <th scope="col">E-mail</th>
                                 <th scope="col">Gênero</th>
                                 <th scope="col">Idade</th>
+                                <th scope="col">Editar</th>
                                 <th scope="col">Excluir</th>
                             </tr>
                         </thead>
@@ -45,6 +48,11 @@ function Usuarios() {
                                         <td>{usuario.genero}</td>
                                         <td>{usuario.idade}</td>
                                         <td>
+                                             <button className="btn btn-sm btn-primary" onClick={() => navigate(`/usuario/${usuario.id}`)}> 
+                                                Editar
+                                            </button>
+                                        </td>
+                                        <td>
                                              <button className="btn btn-sm btn-primary" onClick={() => handlerExcluir(usuario.id)}> 
                                                 Excluir
                                             </button>
@@ -54,7 +62,7 @@ function Usuarios() {
                             }
                         </tbody>
                     </table>
-                    <button className="btn btn-primary" onClick={() => {}}> Novo Usuário </button>
+                    <button className="btn btn-primary" onClick={() => navigate("/usuario/novo")}> Novo Usuário </button>
                 </div>
             </div>
             <Footer />

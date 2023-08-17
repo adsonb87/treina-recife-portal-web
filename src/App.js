@@ -6,6 +6,8 @@ import Curso from "./pages/Curso";
 import CarrinhoDeCompras from "./pages/CarrinhoDeCompras";
 import { GlobalProvider } from "./contexts/GlobalContext";
 import Usuarios from "./pages/Usuarios";
+import Usuario from "./pages/Usuarios/Usuario";
+
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
           <Route path="/cursos/:id" element={<Curso />} />
           <Route path="/carrinho" element={<CarrinhoDeCompras />} />
           <Route path="/usuarios" element={<Usuarios />}/>
+          <Route path="/usuario/novo" element={<Usuario />}/>
+          <Route path="/usuario/:id" element={<Usuario />}/>
         </Routes>
       </BrowserRouter>
     </GlobalProvider>
