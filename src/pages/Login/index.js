@@ -1,12 +1,16 @@
 import logo from "../../assets/treina_recife_logo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../services/api";
+import { UsuarioContext } from "../../contexts/UsuarioContext";
 
 function Login(){
     const[email, setEmail] = useState("");
     const[senha, setSenha] = useState("");
     const[erro, setErro] = useState("");
+    const[user, setUser] = useState([]);
+
+    
 
     const navigate = useNavigate();
 
@@ -19,15 +23,15 @@ function Login(){
             return;
           } else {
 
-            login(
+         login(
             {
                 email,
                 senha
             }, 
-            navigate);
-
+            navigate, setUser);
           }
           
+          console.log(user)
     }
 
     return (

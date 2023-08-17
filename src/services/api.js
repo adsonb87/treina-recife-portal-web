@@ -26,13 +26,8 @@ export async function cadastrarNovoUsuario(usuario, navigate){
     ).catch(() => alert("Erro de rede !"));
 }
 
-export async function obterUsuarioPeloId(idUsuario, 
-                                         setNome,
-                                         setSobrenome,
-                                         setEmail,
-                                         setSenha,
-                                         setGenero,
-                                         setIdade){
+export async function obterUsuarioPeloId(idUsuario, setNome, setSobrenome, setEmail,
+                                         setSenha, setGenero, setIdade){
     await api
     .get(`/usuarios/${idUsuario}`)
     .then((response) => {
@@ -42,8 +37,8 @@ export async function obterUsuarioPeloId(idUsuario,
             setSenha(response.data.senha);
             setGenero(response.data.genero);
             setIdade(response.data.idade);
-        }
-    ).catch(() => alert("Erro de rede !"));
+        })
+    .catch(() => alert("Erro de rede !"));
 }
 
 export async function atualizarUsuario(usuario, navigate){
@@ -54,8 +49,8 @@ export async function atualizarUsuario(usuario, navigate){
         }
     ).catch(() => alert("Erro de rede !"));
 }
-
-export async function login(usuario, navigate){
+/*
+export async function login2(usuario, navigate, setUser){
     const response = await api.get("/usuarios");
 
     let valid = false;
@@ -63,6 +58,7 @@ export async function login(usuario, navigate){
     response.data.map((user) => {
         if(user.email === usuario.email && user.senha === usuario.senha){
             valid = true;
+            setUser(user);
             navigate("/cursos");
         }
     })
@@ -71,12 +67,30 @@ export async function login(usuario, navigate){
         alert("credenciais inválidas");
     }
 }
+*/
+export async function login(usuario, navigate, setUser){
+    let valid = false;
+    
+    await api
+        .get("/usuarios")
+        .then((response) => {
+            response.data.map((user) => {
+                if(user.email === usuario.email && user.senha === usuario.senha){
+                    valid = true;
+                    setUser(response.data[0]);
+                    navigate("/cursos");
+                }
+            })
+        });
+        
+        if(!valid) {
+            alert("credenciais inválidas");
+        }
+    
+}
 
 /**
  * TODO:
- * Criar tela de usuario (cadastro e edição)
- * criar as funções de cadastrar e atualizar
- * criar uma funcao de login
- * ao fazer login, salvar o usuario logado em um estado global usuarioLogado
+  * ao fazer login, salvar o usuario logado em um estado global usuarioLogado
  * armazenamento local
  */

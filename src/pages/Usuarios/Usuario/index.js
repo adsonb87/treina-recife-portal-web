@@ -8,7 +8,7 @@ function Usuario() {
 
     const { id } = useParams();
 
-    const [idUsuario] = useState(5);
+    const [idUsuario] = useState(6);
     const [nome, setNome] = useState("");
     const [sobrenome, setSobrenome] = useState("");
     const [email, setEmail] = useState("");
@@ -44,7 +44,7 @@ function Usuario() {
                     email,
                     senha,
                     genero,
-                    idade
+                    idade,
                 },
                  navigate);
 
@@ -57,15 +57,13 @@ function Usuario() {
                     email,
                     senha,
                     genero,
-                    idade
+                    idade,
                 },
                  navigate);
         }
 
        
     }
-
-    
 
     return (
         <>
@@ -129,18 +127,17 @@ function Usuario() {
                                 />
                             </div>
 
-                            <div className="col-2">
+                            <div className="col-sm-6 mb-3">
                                 <label htmlFor="idade" className="form-label">
-                                    Idade
+                                    Idade:
                                 </label>
                                 <input
                                     type="number"
                                     className="form-control"
-                                    id="addridadeess"
-                                    placeholder=""
-                                    min={0}
+                                    id="idade"
                                     defaultValue={idade}
-                                    onChange={(e) => setIdade(e.target.value)}
+                                    required
+                                    onChange={(event) => setIdade(event.target.value)}
                                 />
                             </div>
 

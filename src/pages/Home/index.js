@@ -2,13 +2,13 @@ import Cabecalho from "../../components/Cabecalho";
 import Card from "../../components/Card";
 import Footer from "../../components/Footer";
 import Capa from "../../components/Capa"
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LISTA_CURSOS } from "../../mocks/cursos";
 import { useCursos } from "../../hooks/useCursos";
 
 function Home() {
     const [cursos, setCursos] = useCursos();
-    const [busca, setBusca] = useState("");
+    const [busca, setBusca] = useState(""); 
 
     useEffect(() => {
         const cursosFiltrados = LISTA_CURSOS.filter((curso) => curso.nome.toLowerCase().includes(busca.toLowerCase()));
