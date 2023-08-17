@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:8080",
+    //baseURL: "http://localhost:8080",
+    baseURL: "http://localhost:3000",
 })
 
 export async function listarUsuarios(setUsuarios) {
@@ -68,7 +69,7 @@ export async function login2(usuario, navigate, setUser){
     }
 }
 */
-export async function login(usuario, navigate, setUser){
+export async function login(usuario, navigate){
     let valid = false;
     
     await api
@@ -77,7 +78,8 @@ export async function login(usuario, navigate, setUser){
             response.data.map((user) => {
                 if(user.email === usuario.email && user.senha === usuario.senha){
                     valid = true;
-                    setUser(response.data[0]);
+                    //adicionarUsuarioLogado(user);
+                    console.log(user);
                     navigate("/cursos");
                 }
             })

@@ -10,7 +10,7 @@ function Login(){
     const[erro, setErro] = useState("");
     const[user, setUser] = useState([]);
 
-    
+    //const { usuaioLogado } = useContext(UsuarioContext);
 
     const navigate = useNavigate();
 
@@ -28,10 +28,9 @@ function Login(){
                 email,
                 senha
             }, 
-            navigate, setUser);
+            navigate);
           }
           
-          console.log(user)
     }
 
     return (

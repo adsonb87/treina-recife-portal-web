@@ -4,11 +4,10 @@ export const UsuarioContext = createContext();
 
 export const UsusarioProvider = ({ children }) => {
     
-    //const [usuarioLogado, setUsuarioLogado] = useState([]);
+    const [usuarioLogado, setUsuarioLogado] = useState([]);
 
-    const adicionarUsuarioLogado = (usuario) => {
-        
-        //setUsuarioLogado([...usuarioLogado, usuario]);
+    const adicionarUsuarioLogado = (usuario) => {        
+        //setUsuarioLogado(usuario);
     }
 
     const removerUsuarioLogado = () => {
@@ -17,7 +16,7 @@ export const UsusarioProvider = ({ children }) => {
     }
 
     return(
-        <UsuarioContext.Provider value={{adicionarUsuarioLogado, removerUsuarioLogado}}>
+        <UsuarioContext.Provider value={{ usuarioLogado, setUsuarioLogado, adicionarUsuarioLogado, removerUsuarioLogado, usuarioLogado}}>
             {children}
         </UsuarioContext.Provider>
     )
