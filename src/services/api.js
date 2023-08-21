@@ -55,20 +55,25 @@ export async function atualizarUsuario(usuario, navigate){
     ).catch(() => alert("Erro de rede !"));
 }
 
-export async function login(usuario, navigate){
-    const response = await api.get("/usuarios");
+export async function login(usuario, navigate, setUsuarioLogado){
+    try{
+        const response = await api.get("/usuarios");
 
-    let valid = false;
-    
-    response.data.map((user) => {
-        if(user.email === usuario.email && user.senha === usuario.senha){
-            valid = true;
-            navigate("/cursos");
+        let valid = false;
+        
+        response.data.map((user) => {
+            if(user.email === usuario.email && user.senha === usuario.senha){
+                valid = true;
+                setUsuarioLogado(user);
+                navigate("/cursos");
+            }
+        });
+
+        if(!valid) {
+            alert("credenciais inválidas");
         }
-    })
-
-    if(!valid) {
-        alert("credenciais inválidas");
+    }catch{
+        alert("Erro inesperado");
     }
 }
 

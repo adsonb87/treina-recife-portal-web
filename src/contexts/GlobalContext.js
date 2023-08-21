@@ -5,6 +5,10 @@ export const GlobalContext = createContext();
 export const GlobalProvider = ({ children }) => {
     const [carrinho, setCarrinho] = useState([]);
 
+    const [usuarioLogado, setUsuarioLogado] = useState();
+
+    
+
     const adicionarItem = (item) => {
         //Desestruturação da lista de carrinho de compras
         setCarrinho([...carrinho, item]);
@@ -17,7 +21,7 @@ export const GlobalProvider = ({ children }) => {
     }
 
     return(
-        <GlobalContext.Provider value={{ carrinho, setCarrinho, adicionarItem, removerItem }}>
+        <GlobalContext.Provider value={{ carrinho, setCarrinho, adicionarItem, removerItem, usuarioLogado, setUsuarioLogado }}>
             {children}
         </GlobalContext.Provider>
     )

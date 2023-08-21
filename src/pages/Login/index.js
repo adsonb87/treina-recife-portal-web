@@ -1,7 +1,8 @@
 import logo from "../../assets/treina_recife_logo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../services/api";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 function Login(){
     const[email, setEmail] = useState("");
@@ -9,6 +10,8 @@ function Login(){
     const[erro, setErro] = useState("");
 
     const navigate = useNavigate();
+
+    const { setUsuarioLogado } = useContext(GlobalContext);
 
     const handleLogin = (event) => {    
         event.preventDefault();
@@ -24,7 +27,7 @@ function Login(){
                 email,
                 senha
             }, 
-            navigate);
+            navigate, setUsuarioLogado);
 
           }
           
