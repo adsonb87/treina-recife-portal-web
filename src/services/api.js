@@ -55,7 +55,7 @@ export async function atualizarUsuario(usuario, navigate){
     ).catch(() => alert("Erro de rede !"));
 }
 
-export async function login(usuario, navigate, setUsuarioLogado){
+export async function login(usuario, navigate, setUsuarioLogado, manterConectado){
     try{
         const response = await api.get("/usuarios");
 
@@ -64,7 +64,15 @@ export async function login(usuario, navigate, setUsuarioLogado){
         response.data.map((user) => {
             if(user.email === usuario.email && user.senha === usuario.senha){
                 valid = true;
+
                 setUsuarioLogado(user);
+
+                if(manterConectado){
+                    localStorage.setItem("usuarioLogado", JSON.stringify(user));
+                }else {
+                    sessionStorage.setItem("usuarioLogado", JSON.stringify(user));
+                }
+                
                 navigate("/cursos");
             }
         });

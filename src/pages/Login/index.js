@@ -8,6 +8,7 @@ function Login(){
     const[email, setEmail] = useState("");
     const[senha, setSenha] = useState("");
     const[erro, setErro] = useState("");
+    const[manterConectado, setManterConectado] = useState(true);
 
     const navigate = useNavigate();
 
@@ -27,7 +28,7 @@ function Login(){
                 email,
                 senha
             }, 
-            navigate, setUsuarioLogado);
+            navigate, setUsuarioLogado, manterConectado);
 
           }
           
@@ -66,7 +67,13 @@ function Login(){
                             }
                         </div>
                         <div className="form-check text-start my-3">
-                            <input className="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault"/>
+                            <input 
+                                className="form-check-input" 
+                                type="checkbox" 
+                                value="remember-me" 
+                                id="flexCheckDefault" 
+                                defaultChecked={manterConectado}
+                                onChange={() => setManterConectado(!manterConectado)}/>
                             <label className="form-check-label" htmlFor="flexCheckDefault">Lembrar</label>
                         </div>
                         <button className="btn btn-primary w-100 py-2" type="submit">Entrar</button>

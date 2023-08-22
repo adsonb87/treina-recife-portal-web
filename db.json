@@ -10,14 +10,6 @@
       "idade": 35
     },
     {
-      "id": 2,
-      "nome": "Edilson",
-      "sobrenome": "Carlos",
-      "email": "edilson@gmail.com",
-      "genero": "M",
-      "idade": 44
-    },
-    {
       "id": 3,
       "nome": "Alexandre",
       "sobrenome": "Silva",

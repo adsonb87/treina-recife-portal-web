@@ -3,7 +3,7 @@ import { GlobalContext } from "../../contexts/GlobalContext";
 
 const Capa = () => {
 
-  const { usuarioLogado } = useContext(GlobalContext)
+  const { usuarioLogado } = useContext(GlobalContext);
 
   return (
     <>

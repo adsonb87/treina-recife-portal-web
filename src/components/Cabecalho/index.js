@@ -1,7 +1,15 @@
 import logo from "../../assets/treina_recife_logo2.png";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function Cabecalho(){
+    const navigate = useNavigate();
+
+    const handleSair = () => {
+        sessionStorage.clear();
+        localStorage.removeItem("usuarioLogado");        
+        navigate("/");
+    }
+
     return (
            <nav className="navbar navbar-expand-lg bg-light">
                 <div className="container-fluid mx-5">
@@ -22,6 +30,9 @@ function Cabecalho(){
                             <Link className="nav-link active" aria-current="page" to="/carrinho">
                                 Ver Carrinho
                             </Link>
+                        </li>
+                        <li className="nav-item">
+                           <button onClick={handleSair}> Sair </button>
                         </li>
                     </ul>
                     </div>
